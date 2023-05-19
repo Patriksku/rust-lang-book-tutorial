@@ -1,0 +1,7 @@
+[workspace]
+
+# Packages in our workspace are 'members'
+members = [
+    "adder",
+    "add-one"
+]

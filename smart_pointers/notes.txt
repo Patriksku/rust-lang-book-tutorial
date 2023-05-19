@@ -1,0 +1,36 @@
+Pointer
+a general concept for a variable that stores a memory address,
+and that memory address refers to, or points to, some other data in memory.
+
+The most common pointers in Rust is a reference.
+A reference simply borrows the value it points to, so it does not have ownership over the values.
+Refrences don't have much "special capabilites", which means that they don't have much overhead
+- unlike smart pointers.
+
+
+
+Smart Pointers
+are data structures that act like a pointer, but have metadata and extra capabilites.
+
+An example is a reference counting smart pointer, which allows a piece of data to have multiple owners,
+by keeping track of the owners. Once there are no more owners, they clean up the data.
+
+In many cases, smart pointers own the data that they point to.
+
+We have already encountered smart pointers, e.g. strings and vectors.
+Both are smart pointers because they own some data, and allow you to manipulate it.
+The store extra data, such as the capacity, and they have extra capabilites,
+for example, the String type, ensures that the data is valid UTF-8.
+
+Smart pointers are usually implemented using structs, but unlike regular structs,
+they implement the "deref" and "drop" traits.
+
+The "deref" trait allows instances of your smart pointer struct to be treated like references.
+So you can write code that works with either references or smart pointers.
+
+The "drop" trait allows you to customize the code that is run, and when an instance of your smart pointer
+goes out of scope.
+
+
+Smart pointers are a general design pattern used frequently in Rust. Many libraries also implement their own smart pointers.
+We will be covering "the most common" smart pointers.

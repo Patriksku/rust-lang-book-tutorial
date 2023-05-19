@@ -1,0 +1,7 @@
+You can install binaries into the rust installation directory by running 'cargo install <package>'.
+We have installed ripgrep like so: 'cargo install ripgrep'. And now we have the Rust version of 'grep' installed.
+We can call it by 'rg ...'.
+
+If we have a binary in our installation directory that starts with 'cargo-', for instance 'cargo-hello', then we can
+use this as a subcommand to cargo. So we would then be able to run 'cargo hello ...'.
+This means that you can extend 'cargo' without modifying its code.
